@@ -1,8 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 body{
   background-color: rgb(255, 255, 255);
-  font-family: 'Patrick Hand', cursive;
+  font-family: 'Lobster Two', cursive;
 }
 .bodyOfPG{
   margin: 0;
@@ -13,6 +13,8 @@ body{
 .ProfilePic{
   display: flex;
   justify-self: center;
+  align-items: center;
+  justify-content: space-around;
 }
 .ProfilePic img{
   display: flex;
@@ -30,6 +32,8 @@ body{
   display: flex;
   justify-self: center;
   transform: translate(-50%,0%);
+  align-items: center;
+  justify-content: space-around;
 }
 .SupportMe img{
   min-height: 100px;
@@ -70,11 +74,18 @@ body{
   width: 50px;
   display: flex;
   justify-content: center;
+  justify-self: center;
+  align-items: center;
 }
 .contactlogo{
   position: fixed;
-  padding: 10px;
   transition: all 1s ease 0s;
+  display: flex;
+  justify-self: center;
+  align-items: center;
+  justify-content: space-around;
+  background-color: transparent;
+  border-color: transparent;
 }
 .contactlogo:hover{
   transform: rotate(45deg);
@@ -87,10 +98,24 @@ body{
 
 .differentPlatform{
   list-style-type: none;
+  position: fixed;
+  right: 15px;
+  bottom: 80px;
+  padding: 0;
+  margin: 0;
+  transition: all 5s ease-in-out;
 }
 .differentIG{
   list-style-type: none;
+  position: fixed;
+  right: 80px;
+  bottom: 400px;
+  padding: 2px 6px;
+  margin: 0;
   text-align: right;
+  background-color: rgba(219, 219, 219, 0.801);
+  border-radius: 5px;
+  box-shadow: 10px 10px 30px rgb(219, 219, 219);
 }
 .message{
   display: flex;
@@ -108,4 +133,22 @@ body{
 .message p{
   padding: 0;
   margin: 0;
+}
+.insta{
+  transition: all 1s ease 0s;
+  background-color: transparent;
+  border-color: transparent;
+}
+.differentPlatform li button{
+  padding: 0px 0px;
+  margin: 0px 0px;
+  border: 0px;
+}
+.insta img{
+  margin: 0;
+  padding: 0;
+}
+.differentIG li a{
+  text-decoration: none;
+  color:rgb(0, 0, 0)
 }

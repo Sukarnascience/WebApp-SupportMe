@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
 
 import buymeacoffee from './bmc-button.svg';
@@ -14,6 +14,14 @@ import facebooklogo from "./facebook.svg";
 import {CgMenuGridO} from 'react-icons/cg';
 
 function App() {
+
+  const [contactMeAllowed,setcontactMeAllowed] = useState(false);
+  const [showinsta,setshowinsta] = useState(false);
+
+  const openContact = () =>{
+    setcontactMeAllowed(!contactMeAllowed) 
+    setshowinsta(false)
+  }
   return (
     <div>
       <div className="bodyOfPG">
@@ -34,22 +42,26 @@ function App() {
         </div>
       </div>
       <div className="ContactMe">
-        <CgMenuGridO className="contactlogo" size="30px" color="#ffffff"/>
-        <ul className="differentPlatform">
-          <li><img src={instagramlogo} aria-hidden alt="instagram"/>
-            <ul className="differentIG">
-              <li><a href="https://www.instagram.com/sukarnajana/">Lifestyle</a></li>
-              <li><a href="https://www.instagram.com/glance_of_nature/">Photography</a></li>
-              <li><a href="https://www.instagram.com/sukarnascience/">Programming</a></li>
-            </ul>
-          </li>
-          <li><a href="https://github.com/Sukarnascience"><img src={githublogo} alt="github"/></a></li>
-          <li><a href="https://www.facebook.com/sukarna.jana.9"><img src={facebooklogo} alt="facebook"/></a></li>
-          <li><a href="https://www.snapchat.com/add/sukarna_j2020"><img src={snapchatlogo} alt="snapchat"/></a></li>
-          <li><a href="https://t.me/SukarnaJana"><img src={telegramlogo} alt="telegram"/></a></li>
-          <li><a href="https://twitter.com/JanaSukarna"><img src={twitterlogo} alt="twitter"/></a></li>
-          <li><a href="https://www.youtube.com/channel/UCKkr1oGBN5RbZ2LSdg-VOaQ"><img src={youtubelogo} alt="youtube"/></a></li>
-        </ul>
+        <button className="contactlogo" onClick={openContact}><CgMenuGridO size="30px" color="#ffffff"/></button>
+        { contactMeAllowed && 
+          <ul className="differentPlatform">
+            <li><button className="insta" onClick={()=>{setshowinsta(!showinsta)}}><img src={instagramlogo} aria-hidden alt="instagram"/></button>
+              { showinsta &&
+                  <ul className="differentIG">
+                    <li><a href="https://www.instagram.com/sukarnajana/">Lifestyle</a></li>
+                    <li><a href="https://www.instagram.com/glance_of_nature/">Photography</a></li>
+                    <li><a href="https://www.instagram.com/sukarnascience/">Programming</a></li>
+                  </ul>
+              }
+            </li>
+            <li><a href="https://github.com/Sukarnascience"><img src={githublogo} alt="github"/></a></li>
+            <li><a href="https://www.facebook.com/sukarna.jana.9"><img src={facebooklogo} alt="facebook"/></a></li>
+            <li><a href="https://www.snapchat.com/add/sukarna_j2020"><img src={snapchatlogo} alt="snapchat"/></a></li>
+            <li><a href="https://t.me/SukarnaJana"><img src={telegramlogo} alt="telegram"/></a></li>
+            <li><a href="https://twitter.com/JanaSukarna"><img src={twitterlogo} alt="twitter"/></a></li>
+            <li><a href="https://www.youtube.com/channel/UCKkr1oGBN5RbZ2LSdg-VOaQ"><img src={youtubelogo} alt="youtube"/></a></li>
+          </ul>
+        }
       </div>
     </div>
   );
