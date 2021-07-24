@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import './App.css';
 
 import buymeacoffee from './bmc-button.svg';
@@ -17,23 +17,57 @@ function App() {
 
   const [contactMeAllowed,setcontactMeAllowed] = useState(false);
   const [showinsta,setshowinsta] = useState(false);
+  const [visited,setvisited] = useState(false);
+  const camehere = 'yes';
 
   const openContact = () =>{
     setcontactMeAllowed(!contactMeAllowed) 
     setshowinsta(false)
   }
+
+  const visitedHere = () =>{
+    localStorage.setItem('visited',JSON.stringify(camehere))
+  } 
+
+  useEffect(()=>{
+    const Didvisited = JSON.parse(localStorage.getItem('visited'))
+    if(Didvisited==='yes'){
+      setvisited(true)
+    }
+  },[])
+
   return (
     <div>
       <div className="bodyOfPG">
         <div className="ProfilePic">
           <img src={profilepic} aria-hidden alt="Profile Picture"/>
         </div>
-        <div className="message">
+        <div className="message" onMouseEnter={visitedHere} onTouchMove={visitedHere}>
           <h1>Hello,</h1>
+          { visited ?
+            <h2>Woow it's really great to see you here once again in this page</h2>:
+            <h2>It's really great to see you here on this page :)</h2>
+          }
           <p>
-            My self Sukarna Jana, and i hold some skills like: <b>Programming</b>,
-            <b>Photography</b>,Always try to make a product which can help me in day to day work
+            Your small support will helps me a lot or in another way which 
+            will put some value on my skills / hard work<br/>
+            and which motivates me for doing or exploring new things 
+            and your every contribution help me to invest in my skills 
+            and enhance my productivity
           </p>
+          <br/>
+          <p>
+            You can show your support by clicking on <i>"Buy me a coffee"</i> button
+          </p>
+          <br/>
+          { !visited &&
+            <p>
+              <b>Do You Know:</b> I have discovered some talents inside me like 
+              Programming,  Photographing, and still discovering new hidden talents <br/>
+              and if you want to see my other talents click on the circular button on the 
+              bottom right corner of this page
+            </p>
+          }
         </div>
         <div className="SupportMe">
           <a href="https://www.buymeacoffee.com/sukarnajana">
