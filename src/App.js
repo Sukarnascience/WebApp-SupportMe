@@ -2,6 +2,7 @@ import React, { useState,useEffect } from 'react';
 import './App.css';
 
 import buymeacoffee from './bmc-button.svg';
+import patreon from './Patreon-Wordmark.png';
 import profilepic from "./ProfilePic.jpg";
 import youtubelogo from "./youtube.svg";
 import twitterlogo from "./twitter.svg";
@@ -10,6 +11,7 @@ import snapchatlogo from "./snapchat.svg";
 import instagramlogo from "./instagram.svg";
 import githublogo from "./github.svg";
 import facebooklogo from "./facebook.svg";
+import discord from "./discord.svg";
 
 import {CgMenuGridO} from 'react-icons/cg';
 
@@ -71,7 +73,10 @@ function App() {
         </div>
         <div className="SupportMe">
           <a href="https://www.buymeacoffee.com/sukarnajana">
-            <img src={buymeacoffee} alt="Support Me"/>
+            <img className="buymeacoffee" src={buymeacoffee} alt="Support Me"/>
+          </a>
+          <a href="https://www.patreon.com/sukarnajana">
+            <img className="patreon" src={patreon} alt="patreon"/>
           </a>
         </div>
       </div>
@@ -92,6 +97,7 @@ function App() {
             <li><a href="https://www.facebook.com/sukarna.jana.9"><img src={facebooklogo} alt="facebook"/></a></li>
             <li><a href="https://www.snapchat.com/add/sukarna_j2020"><img src={snapchatlogo} alt="snapchat"/></a></li>
             <li><a href="https://t.me/SukarnaJana"><img src={telegramlogo} alt="telegram"/></a></li>
+            <li><a href="https://discord.gg/7HD2Me5R"><img src={discord} alt="discord"/></a></li>
             <li><a href="https://twitter.com/JanaSukarna"><img src={twitterlogo} alt="twitter"/></a></li>
             <li><a href="https://www.youtube.com/channel/UCKkr1oGBN5RbZ2LSdg-VOaQ"><img src={youtubelogo} alt="youtube"/></a></li>
           </ul>

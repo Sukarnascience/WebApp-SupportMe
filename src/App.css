@@ -34,12 +34,23 @@ body{
   transform: translate(-50%,0%);
   align-items: center;
   justify-content: space-around;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
-.SupportMe img{
+.buymeacoffee{
   min-height: 100px;
   min-width: 100px;
   max-height: 200px;
   max-width: 200px;
+}
+.patreon{
+  height: 40px;
+  width: 200px;
+  min-height: 40px;
+  min-width: 200px;
+  max-height: 100px;
+  max-width: 350px;
 }
 .SupportMe:hover{
   animation-play-state: paused;
